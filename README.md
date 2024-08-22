@@ -8,6 +8,8 @@ This repository is essentially a ROS package.
 2. Build the package with `catkin_make`
 3. Run the ROS Node `rosrun image_subscriber image_subscriber.py` while the expected topics are published.
 
+This will most probably not work due to issues with the video feed format published by the voxl_mpa_to_ros node of the RB5 drone. But the script below should work normally.
+
 ### To test out RTSP node-
 
 1. Make sure the drone and the laptop/computer are on the same network
