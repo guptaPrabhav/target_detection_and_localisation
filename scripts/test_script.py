@@ -5,9 +5,9 @@ import time
 frame_rate = 5
 prev = 0
 
-video_capture = cv2.VideoCapture("rtsp://192.168.0.72:8901/live")
+video_capture = cv2.VideoCapture("rtsp://192.168.0.10:8901/live")
 
-model = YOLO('/home/prabhav/Desktop/IISc/yolov8m.pt')
+model = YOLO('/home/prabhav/Desktop/IISc/yolov8n.pt')
 
 while(True):
     time_elapsed = time.time() - prev
@@ -20,7 +20,7 @@ while(True):
         cv2.imshow('original_video', frame)
 
         results = model.predict(frame, conf=0.5)
-        # print(results)
+        print(results)
         annotaed_frame = results[0].plot()
         cv2.imshow('drone_video', annotaed_frame)
     
